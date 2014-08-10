@@ -59,6 +59,9 @@ namespace USB_Lockdown
             KH = null;
         }
     }
+
+
+    // From http://www.codeproject.com/Articles/14485/Low-level-Windows-API-hooks-from-C-to-stop-unwante
     public class KeyboardHook : IDisposable
     {
         /// <summary>

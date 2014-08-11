@@ -39,7 +39,7 @@ namespace USB_Lockdown
                 {
                     if (File.Exists(currentDrive.Name + "\\LockDown.config")) // the first check for a valid drive. Could be something else, but this is a lightweight test to be done first!
                     {
-                        if (driveValidate(currentDrive))
+                        if (driveValidate(currentDrive)) //runs the full validation of the drive
                         {
                             validDrive = currentDrive;
                             driveFound = true;

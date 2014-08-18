@@ -47,38 +47,11 @@ namespace USB_Lockdown
                     catch { }
                     if (File.Exists(currentDrive.Name + "\\LockDown.config")) // the first check for a valid drive. Could be something else, but this is a lightweight test to be done first!
                     {
-                        if (driveValidate(currentDrive)) //runs the full validation of the drive
-                        {
-                            validDrive = currentDrive;
-                            driveFound = true;
-                            break;
-                        }
+   
                     }
                 }
             }
         }
-
-        internal static bool driveValidate(DriveInfo drive){
-            if (!checkHash(drive)) {
-                return false;
-            }
-            return true;
-        }
-
-        private static bool checkHash(DriveInfo drive)
-        {
-            string fileName = drive.Name + "";
-            if (!File.Exists(fileName)) { return false; }
-
-            using (BinaryReader reader = new BinaryReader(File.Open(fileName, FileMode.Open)))
-            {
-                string hashFromDrive = reader.ReadString();
-                if (hashFromDrive != )
-            }
-            return true;
-        }
-
-
         internal static void resetValues()
         {
             validDrive = null;
